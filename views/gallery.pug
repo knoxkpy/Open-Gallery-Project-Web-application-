@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+    head
+        title Gallery
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="/galleryStyles.css")
+    body
+        header
+            nav.navbar
+                h1 Open Gallery!
+                div.nav-links
+                    a(href="/search") Search
+                    a(href="/account-management") Account Management
+                    a(href="/gallery") Gallery
+                    a(href="/logout") Logout
+                // ... more navigation links ...
+        main.gallery-main
+            h1.title Current Gallery
+            if galleryItems.length > 0
+                .gallery-items
+                    each item in galleryItems
+                        .gallery-item
+                            h2.item-title #{item.Title}
+                            a(href=`/artwork/${item._id}`)
+                                img(src=item.Poster alt=item.Title)
+            else
+                p No items to display.

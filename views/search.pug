@@ -1,0 +1,44 @@
+doctype html
+html(lang="en")
+    head
+        title #{title}
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="/searchStyles.css")
+    body
+        header
+            nav.navbar
+                h1 Open Gallery!
+                div.nav-links
+                    a(href="/search") Search
+                    a(href="/account-management") Account Management
+                    a(href="/gallery") Gallery
+                    a(href="/logout") Logout
+    main
+        block content
+
+block content
+    .search-container
+        form(action="/search" method="get")
+            .search-box
+                input(type="text" name="query" placeholder="Search for artworks!" value=query required)
+                button(type="submit") Search
+
+    if artworks.length
+        h1 Search Results for "#{query}"
+        ul
+            each artwork in artworks
+                li
+                    a(href=`/artwork/${artwork._id}`) #{artwork.Title} by #{artwork.Artist.username}
+
+        if totalPages > 1
+            .pagination
+                ul
+                    if hasPrevPage
+                        li: a(href=`/search?query=${encodeURIComponent(query)}&page=${prevPage}`) Prev
+                    each _, i in Array(totalPages).fill()
+                        li: a(href=`/search?query=${encodeURIComponent(query)}&page=${i+1}` class=(currentPage === i+1 ? 'active' : '')) #{i+1}
+                    if hasNextPage
+                        li: a(href=`/search?query=${encodeURIComponent(query)}&page=${nextPage}`) Next
+    else
+        h2 No results found for "#{query}"

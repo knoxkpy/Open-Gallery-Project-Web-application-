@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+    head
+        title #{workshop.Title} Workshop Details
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="/workshopDetails.css")
+    body
+        header
+            nav.navbar
+                h1 Open Gallery!
+                div.nav-links
+                    a(href="/search") Search
+                    a(href="/account-management") Account Management
+                    a(href="/gallery") Gallery
+                    a(href="/logout") Logout
+        main.workshop-main
+            h1 Workshop: #{workshop.Title}
+            section.workshop-info
+                h2 Hosted by #{workshop.Artist.username}
+                p Date: #{workshop.Date.toDateString()}
+                p Description: 
+                    |   #{workshop.Description}
+            section.enrolled-users
+                h2 Enrolled Users
+                if enrolledUsers.length
+                    ul.users-list
+                        each user in enrolledUsers
+                            li.user-item #{user}
+                else
+                    p No users enrolled yet.

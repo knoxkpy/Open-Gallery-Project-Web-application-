@@ -1,0 +1,53 @@
+doctype html
+html(lang="en")
+    head
+        title Gallery
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="/artworkPage.css")
+    body
+        header
+            nav.navbar
+                h1 Open Gallery!
+                div.nav-links
+                    a(href="/search") Search
+                    a(href="/account-management") Account Management
+                    a(href="/gallery") Gallery
+                    a(href="/logout") Logout
+                    // ... other navigation links ...
+        main.artwork-main
+            section.artwork-info
+                h1.title #{artwork.Title}
+                p.artist
+                    | Artist: 
+                    a(href=`/artist/${artwork.Artist._id}`) #{artwork.Artist.username}
+                p.year Year: #{artwork.Year}
+                p.category
+                    | Category: 
+                    a(href=`/search?query=${artwork.Category}`) #{artwork.Category}
+                p.medium
+                    | Medium: #{artwork.Medium}
+                p.description #{artwork.Description}
+                img.artwork-poster(src=artwork.Poster alt=artwork.Title)
+
+            section.artwork-reviews
+                h2 Reviews
+                if artwork.reviews.length
+                    ul.reviews-list
+                        each review in artwork.reviews
+                            li.review
+                                p #{review.text}
+                else
+                    p No reviews yet.
+
+            section.artwork-likes
+                p.likes #{artwork.likes.length} Likes
+
+            section.add-review
+                form(action=`/artwork/${artwork._id}/add-review` method="post")
+                    textarea(name="review" required)
+                    button(type="submit") Add Review
+
+            section.add-like
+                form(action=`/artwork/${artwork._id}/add-like` method="post")
+                    button(type="submit") Like

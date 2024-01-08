@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+    head
+        title Login Page
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="/loginStyles.css")
+        script(src="/login.js")
+    body
+        header
+            nav.header
+                h1.GalleryLogin Gallery Login
+        main.centered-container
+            section.login-box
+                h2 User Login
+                form#loginForm()
+                    .input-group
+                        label(for="username") Username:
+                        input#username(type="text" name="username" required)
+                    .input-group
+                        label(for="password") Password:
+                        input#password(type="password" name="password" required)
+                    button.btn(id="loginBtn" type="submit" onclick="login()") Log In
+                .login-options
+                    a(href="/signup") Sign Up
+                    span | 
+                    a(href="/forgot-password") Forgot Password

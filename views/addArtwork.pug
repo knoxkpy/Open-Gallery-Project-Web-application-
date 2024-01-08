@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+    head
+        title Add Artwork
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="/addArtworkStyles.css")
+    body
+        header
+            nav.navbar
+                h1 Open Gallery!
+                div.nav-links
+                    a(href="/search") Search
+                    a(href="/account-management") Account Management
+                    a(href="/gallery") Gallery
+                    a(href="/logout") Logout
+        main
+            form#addArtworkForm(action="/addArtwork" method="post")
+                label(for="title") Title:
+                input(type="text" id="title" name="title" required)
+                
+                label(for="year") Year:
+                input(type="text" id="year" name="year" required)
+                
+                label(for="category") Category:
+                input(type="text" id="category" name="category" required)
+                
+                label(for="medium") Medium:
+                input(type="text" id="medium" name="medium" required)
+                
+                label(for="description") Description:
+                textarea(id="description" name="description" required)
+                
+                label(for="poster") Poster URL:
+                input(type="url" id="poster" name="poster" required)
+                
+                button(type="submit") Submit Artwork

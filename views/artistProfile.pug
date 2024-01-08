@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+    head
+        title #{artist.username}'s Profile
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="/artistProfile.css")
+        script(src="/artistProfile.js")
+    body
+        header
+            nav.navbar
+                h1 Open Gallery!
+                div.nav-links
+                    a(href="/search") Search
+                    a(href="/account-management") Account Management
+                    a(href="/gallery") Gallery
+                    a(href="/logout") Logout
+        main.artist-main
+            h1 Welcome to #{artist.username}'s Profile!
+            section.artist-info
+                button(onclick=`followArtist('${artist._id}')`) Follow
+                h2 #{artist.username}'s Artwork!
+                ul.artworks-list
+                    each artwork in artistArtworks
+                        li.artwork-item
+                            a(href=`/artwork/${artwork._id}`)
+                                h3 #{artwork.Title}
+                            p #{artwork.Description}
+            section.artist-workshops
+                h2 Workshops by #{artist.username}
+                ul.workshops-list
+                    each workshop in artistWorkshops
+                        li.workshop-item
+                            a(href=`/workshop/${workshop._id}`) #{workshop.Title}
+                            p #{workshop.Description}
+                            p Date: #{workshop.Date.toLocaleDateString("en-US")}
+                            button(onclick=`enrollWorkshop('${workshop._id}')`) Enroll

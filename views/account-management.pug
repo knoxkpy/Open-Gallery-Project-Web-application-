@@ -1,0 +1,67 @@
+doctype html
+html(lang="en")
+    head
+        title Account Management
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="/accountStyles.css")
+        script(src="/accountScripts.js")
+    body
+        header
+            nav.navbar
+                h1 Open Gallery!
+                div.nav-links
+                    a(href="/search") Search
+                    a(href="/account-management") Account Management
+                    a(href="/gallery") Gallery
+                    a(href="/logout") Logout
+        main.account-main
+            h1.title Account Management
+            .account-info
+                if user.accountType == 'Patron'
+                    button#upgradeAccountButton(onclick="upgradeAccount()") Upgrade to Artist
+                else
+                    button#downgradeAccountButton(onclick="downgradeAccount()") Change to Patron
+                    br
+                    a(href="/addArtwork")
+                        button#addArtworkButton Add Artwork
+                    br
+                    a(href="/addWorkshop")
+                        button#addWorkshopButton Add Workshop
+            .followed-artists
+                h2 Followed Artists
+                ul.artists-list
+                    each artist in followedArtists
+                        li.artist
+                            a(href=`/artist/${artist._id}`) #{artist.username}
+                        button(onclick=`unfollowArtist('${artist._id}')`) Unfollow.
+            .liked-artworks
+                h2 Liked Artworks
+                ul.artworks-list
+                    each artwork in likedArtworks
+                        li.artwork
+                            a(href=`/artwork/${artwork._id}`) #{artwork.Title}
+                        button(onclick=`unlikeArtwork('${artwork._id}')`) Unlike
+            .user-reviews
+                h2 Your Reviews
+                ul.review-list
+                    each review in reviews
+                        li.review
+                            if review.artwork
+                                a(href=`/artwork/${review.artwork._id}`) #{review.artwork.Title}
+                                p #{review.text}
+                                button(onclick=`deleteReview('${review._id}')`) Delete Review
+                            else
+                                p Review for an artwork that is no longer available.
+
+            .notifications
+                h2 Notifications
+                ul.notifications-list
+                    each notification in notifications
+                        li.notification
+                            .notification-content
+                                if !notification.seen
+                                    p.notification-message #{notification.message}
+                                    a.notification-link(href=notification.link) View
+
+
