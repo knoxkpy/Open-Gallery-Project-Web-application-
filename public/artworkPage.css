@@ -1,0 +1,118 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+  
+.navbar {
+    background-color: #6a1b9a;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #7d42a1;
+    border-radius: 4px;
+}
+  
+.artwork-main {
+    padding: 20px;
+    background-color: #f4f4f4;
+    min-height: calc(100% - 60px);
+}
+
+.artwork-info {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.artwork-info h1.title {
+    color: #6a1b9a;
+    margin-bottom: 10px;
+}
+
+.artwork-info p, .artwork-info a {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.artwork-info a {
+    color: #6a1b9a;
+    text-decoration: none;
+}
+
+.artwork-info a:hover {
+    text-decoration: underline;
+}
+
+.artwork-poster {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.reviews-list, .likes-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.review, .like {
+    background: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.add-review form, .add-like form {
+    margin-top: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7d42a1;
+}
+
+.artwork-poster {
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 20px auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

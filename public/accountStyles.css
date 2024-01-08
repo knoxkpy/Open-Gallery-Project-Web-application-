@@ -1,0 +1,99 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    background-color: #6a1b9a;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+  
+.nav-links a:hover {
+    background-color: #7d42a1;
+    border-radius: 4px;
+}
+  
+.account-main {
+    padding: 20px;
+    background-color: #f4f4f4; 
+    min-height: calc(100% - 60px);
+}
+  
+.title {
+    color: #333;
+    margin-bottom: 20px;
+}
+  
+
+.account-info {
+    margin-bottom: 30px;
+}
+  
+
+button {
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+button:hover {
+    background-color: #7d42a1;
+}
+  
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+  
+li:last-child {
+    margin-bottom: 0;
+}
+  
+h2 {
+    color: #6a1b9a;
+    margin-bottom: 10px;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+}
+
+.notification-message {
+    margin-right: 10px;
+}
+
+.notification-link {
+    text-decoration: none;
+    color: #6a1b9a;
+}
+
+.notification-link:hover {
+    text-decoration: underline;
+}

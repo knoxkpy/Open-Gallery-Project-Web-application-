@@ -1,0 +1,92 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    background-color: #6a1b9a;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #7d42a1;
+    border-radius: 4px;
+}
+  
+button {
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7d42a1;
+}
+
+.artist-workshops {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.artist-main {
+    padding: 20px;
+}
+  
+.artist-info {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+.artist-info h2 {
+    color: #6a1b9a;
+    margin-bottom: 10px;
+}
+  
+.artworks-list {
+    list-style: none;
+    padding: 0;
+}
+  
+.artwork-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+  
+.artwork-item:last-child {
+    border-bottom: none;
+}
+  
+.artwork-item a {
+    text-decoration: none;
+    color: #6a1b9a;
+    font-weight: bold;
+}
+  
+.artwork-item a:hover {
+    text-decoration: underline;
+}
+  
+.artwork-item p {
+    color: #666;
+}

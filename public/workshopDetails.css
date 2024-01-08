@@ -1,0 +1,78 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+  
+.navbar {
+    background-color: #6a1b9a;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #7d42a1;
+    border-radius: 4px;
+}
+
+.workshop-main {
+    padding: 20px;
+    background-color: #f4f4f4;
+    min-height: calc(100% - 60px); /* Adjust height if necessary */
+}
+
+/* Workshop information section */
+.workshop-info {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.workshop-info h2 {
+    color: #6a1b9a;
+    margin-bottom: 10px;
+}
+
+.workshop-info p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.enrolled-users {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.enrolled-users h2 {
+    color: #6a1b9a;
+    margin-bottom: 10px;
+}
+
+.users-list {
+    list-style: none;
+    padding: 0;
+}
+
+.user-item {
+    padding: 10px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.user-item:last-child {
+    border-bottom: none;
+}
